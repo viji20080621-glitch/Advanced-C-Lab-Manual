@@ -1,144 +1,211 @@
-EXP NO:16 C PROGRAM TO SEARCH A GIVEN ELEMENT IN THE GIVEN LINKED LIST.
-Aim:
-To write a C program to search a given element in the given linked list.
+## EXP NO:11 C PROGRAM TO DISPLAY STACK ELEMENTS USING AN ARRAY.
 
+Aim:
+To write a C program to display stack elements using an array.
 Algorithm:
-1.	Define the structure for a node in a linked list.
-2.	Define the search function to find a specific character in the linked list.
-3.	Initialize the head of the linked list as needed.
-4.	Call the search function and perform other linked list operations as needed.
+1.	Include Necessary Header Files
+2.	Declare Global Variables
+3.	Define the Display Function
+4.	Main Function (or Other Relevant Code)
+5.	Initialize the stack and top as needed.
+6.	Perform stack operations (push, pop, etc.).
+7.	Use the display function to visualize the stack's contents
  
 Program:
-
-//type your code here
+```
+int stack[40],top,i;
+ void display()
+{
+for(i=top;i>=0;i--)
+{
+printf("%d\n",stack[i]);
+}
+}
+```
 
 Output:
 
-//paste your output here
+<img width="620" height="557" alt="image" src="https://github.com/user-attachments/assets/9ad08b55-4993-4954-8c17-3bef03dfa727" />
+
 
 
 
 Result:
-Thus, the program to search a given element in the given linked list is verified successfully.
 
-
+Thus, the program to display stack elements using an array is verified successfully.
  
-EXP NO:17  PROGRAM TO INSERT A NODE IN A LINKED LIST.
+
+## EXP NO:12  PROGRAM TO PUSH THE GIVEN ELEMENT IN TO A STACK USING ARRAY.
 Aim:
-To write a C program to insert a node in a linked list.
+To create a C program to push the given element in to a stack using array.
 Algorithm:
-1.	Define the structure for a node in a linked list
-2.	Define the insert function to insert a new node with character data at the end of the linked list.
-3.	Initialize the head of the linked list as needed.
-4.	Call the insert function and perform other linked list operations as needed.
+1.	Declare global variables for the stack size, top index, and the stack itself.
+2.	Define the push function to add a floating-point number to the stack.
+3.	Initialize the stack size, top index, and the stack itself.
+4.	Call the push function as needed.
  
 Program:
 
-//type your code here
+```
+int size=3,top=-1;
+char stack[100];
+void push (char data)
 
+{
+    if(top==size-1)
+    {
+        printf("stack is full\n");
+    }
+    else
+    {
+        stack[++top]=data;
+    }
+    
+}
+```
 Output:
 
-//paste your output here
-
- 
-Result:
-Thus, the program to insert a node in a linked list is verified successfully.
-
-
- 
-EXP NO:18 C PROGRAM TO TRAVERSE A DOUBLY LINKED LIST
-Aim:
-To write a C program to traverse a doubly linked list.
-
-Algorithm:
-1.	Initialize a temporary pointer (temp) to the head of the list.
-2.	Use a while loop to traverse the list until the end (temp == NULL) is reached.
-3.	Inside the loop, print the data of the current node.
-4.	Move to the next node by updating the temp pointer to point to the next node (temp = temp->next).
- 
-Program:
-
-//type your code here
-
-Output:
-
-//paste your output here
-
-
-Result:
-Thus, the program to traverse a doubly linked list is verified successfully. 
-
-
-
-EXP NO:19 C PROGRAM TO INSERT AN ELEMENT IN DOUBLY LINKED LIST
-Aim:
-To write a C program to insert an element in doubly linked list
-
-Algorithm:
-1.	Create a new node (newNode) and allocate memory for it.
-2.	Set the data of the new node to the provided value.
-3.	If the list is empty, set the new node as the head.
-4.	If the list is not empty, traverse the list to find the last node.
-5.	Set the new node's prev pointer to the last node and update the last node's next pointer to the new node.
- 
-Program:
-
-//type your code here
-
-Output:
-
-//paste your output here
-
-
-Result:
-Thus, the program to insert an element in doubly linked list is verified successfully.
-
-
-
-
-EXP NO:20 C FUNCTION TO DELETE A GIVEN ELEMENT IN THE GIVEN LINKED LIST
-
-
-
-
-Aim:
-To write a C function that deletes a given element from a linked list.
-
-Algorithm:
-1.	Check if the Linked List is Empty:
-o	If the head of the linked list is NULL, print a message indicating the list is empty and exit the function.
-2.	Traverse the Linked List:
-o	Start from the head node and iterate through the list to find the node that contains the given element (data).
-3.	Handle Deletion of the First Node:
-o	If the element to be deleted is found in the head node:
-	Update the head of the linked list to point to the next node (i.e., head = head->next).
-	Free the memory allocated to the node to be deleted.
-	Exit the function.
-4.	Traverse and Delete from the Middle or End:
-o	If the element is not in the head node, continue traversing the list by checking each node’s next pointer.
-o	When the node with the element is found, update the previous node’s next pointer to point to the next node of the node to be deleted (prev->next = current->next).
-o	Free the memory allocated to the node to be deleted.
-5.	Handle the Case when the Element is Not Found:
-o	If the element is not found in any node, print a message indicating the element is not present in the list.
-6.	End the Function.
-
-
-Program:
-
-//type your code here
-
-Output:
-
-//paste your output here
+<img width="725" height="580" alt="image" src="https://github.com/user-attachments/assets/a842bdb4-a803-489b-a188-43f6020df94a" />
 
 
 
 
 
 Result:
-Thus, the function that deletes a given element from a linked list is verified successfully.
+
+Thus, the program to push the given element in to a stack using array is verified successfully
+
+
+ 
+## EXP NO:13 C PROGRAM TO DISPLAY QUEUE ELEMENTS USING ARRAY.
+Aim:
+To write a C program to display queue elements using array
+
+Algorithm:
+1.	Declare global variables for the queue, rear, front, and iteration.
+2.	Define the display function to print the elements of the queue.
+3.	Initialize the queue, rear, and front as needed.
+4.	Call the display function and perform other queue operations as needed.
+ 
+Program:
+```
+char queue[50];
+int front,rear;
+
+void display()
+{
+    if(front==-1||front>rear)
+    {
+        printf("No elements to display\n");
+    }else{
+        for(int i=front;i<=rear;i++)
+        {
+            printf("%c ",queue[i]);
+        }
+    }
+}
+```
+
+
+Output:
+
+<img width="1122" height="545" alt="image" src="https://github.com/user-attachments/assets/b99c89df-5f9f-484c-96e8-c0d585b54f38" />
 
 
 
+Result:
+Thus, the program to display queue elements using array is verified successfully.
 
 
+ 
+## EXP NO:14 C PROGRAM TO INSERT ELEMENTS IN QUEUE USING ARRAY.
+Aim:
+To write a C program to insert elements in queue using array.
+
+Algorithm:
+1.	Declare global variables for the size, rear, front, and the queue itself.
+2.	Define the enqueue function to add a float to the queue.
+3.	Initialize the rear, front, and size of the queue as needed.
+4.	Call the enqueue function as needed.
+
+Program:
+```
+float queue[50];
+int rear=-1,front=-1;
+void enqueue(float data)
+{
+    if(rear==49)
+    {
+        printf("Queue Overflow\n");
+        
+    }else
+    {
+        if(front==-1)
+        front=0;
+        queue[++rear]=data;
+    }
+}
+```
+
+Output:
+
+<img width="910" height="476" alt="image" src="https://github.com/user-attachments/assets/c5fefa76-a7e6-446d-8021-bf2bdeee29b3" />
+
+
+Result:
+Thus, the program to insert elements in queue using array is verified successfully.
+
+
+
+ 
+## EXP NO:15 C FUNCTION TO DELETE ELEMENTS IN QUEUE USING ARRAY
+
+
+
+Aim:
+
+To create a function in C that deletes an element from a queue implemented using an array.
+
+Algorithm:
+
+1.	Check if the Queue is Empty
+o	If the front pointer is -1, it means the queue is empty, and there are no elements to delete. Print a message indicating that the queue is empty.
+2.	Delete the Front Element
+o	If the queue is not empty, the element at the front index is deleted.
+o	Increment the front pointer by 1 to remove the element and point to the next element in the queue.
+3.	Check if the Queue Becomes Empty After Deletion:
+o	After deletion, check if the front pointer has passed the rear pointer (front > rear). If this is true, reset both front and rear to -1, indicating that the queue is now empty.
+4.	End the Function.
+
+
+
+Program:
+```
+int queue[100];
+int front=-1,rear=-1;
+
+void dequeue()
+{
+    if(front==-1||front>rear)
+    {
+        printf("Queue Underflow\n");
+    }else
+    {
+        front++;
+        if(front>rear)
+        {
+            front=rear=-1;
+        }
+    }
+    
+}
+```
+
+Output:
+
+<img width="865" height="897" alt="image" src="https://github.com/user-attachments/assets/cdd64a0b-0317-4429-9c17-c368fd341cb0" />
+
+
+
+Result:
+Thus, the function that deletes an element from a queue implemented using an array is verified successfully.
