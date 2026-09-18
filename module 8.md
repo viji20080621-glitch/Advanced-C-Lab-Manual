@@ -1,4 +1,4 @@
-EXP NO:6 C PROGRAM PRINT THE LOWERCASE ENGLISH WORD CORRESPONDING TO THE NUMBER
+## EXP NO:6 C PROGRAM PRINT THE LOWERCASE ENGLISH WORD CORRESPONDING TO THE NUMBER
 Aim:
 To write a C program print the lowercase English word corresponding to the number
 Algorithm:
@@ -15,16 +15,56 @@ Algorithm:
 4.	Exit the program.
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    switch(n) {
+        case 5:
+            printf("seventy one\n");
+            break;
+        case 6:
+            printf("seventy two\n");
+            break;
+        case 7:
+            printf("seventy three\n");
+            break;
+        case 8:
+            printf("seventy four\n");
+            break;
+        case 9:
+            printf("seventy five\n");
+            break;
+        case 10:
+            printf("seventy six\n");
+            break;
+        case 11:
+            printf("seventy seven\n");
+            break;
+        case 12:
+            printf("seventy eight\n");
+            break;
+        case 13:
+            printf("seventy nine\n");
+            break;
+        default:
+            printf("Greater than 13\n");
+    }
+
+    return 0;
+}
+```
 
 
 
 
 Output:
 
+<img width="728" height="227" alt="image" src="https://github.com/user-attachments/assets/3a720c61-b87e-4563-9a42-fcc603a3fcaf" />
 
-//paste your output here
 
 
 
@@ -32,9 +72,11 @@ Output:
 
 
 Result:
+
 Thus, the program is verified successfully
- 
-EXP NO:7 C PROGRAM TO PRINT TEN SPACE-SEPARATED INTEGERS     IN A SINGLE  LINE DENOTING THE FREQUENCY OF EACH DIGIT FROM 0 TO 3 .
+
+
+## EXP NO:7 C PROGRAM TO PRINT TEN SPACE-SEPARATED INTEGERS     IN A SINGLE  LINE DENOTING THE FREQUENCY OF EACH DIGIT FROM 0 TO 3 .
 Aim:
 To write a C program to print ten space-separated integers in a single line denoting the frequency of each digit from 0 to 3.
 Algorithm:
@@ -46,8 +88,31 @@ Algorithm:
 6.	End
  
 Program:
-
-//type your code here
+```
+#include<stdio.h>
+#include<string.h> 
+int main()
+{
+    char a[50]; 
+    scanf("%s",a); 
+    int l=strlen(a); char h='0';
+    for(int i=0;i<4;i++)
+    {
+        int c=0;
+        for(int j=0;j<l;j++)
+        {
+            if(a[j]==h)
+            {
+                c+=1;
+                
+            }
+            
+        }
+        printf("%d ",c); 
+        h++;
+    }
+}
+```
 
 
 
@@ -55,7 +120,8 @@ Program:
 Output:
 
 
-//paste your output here
+<img width="1008" height="228" alt="image" src="https://github.com/user-attachments/assets/dc9de052-6e1f-470a-a908-ea0175205690" />
+
 
 
 
@@ -63,9 +129,11 @@ Output:
 
 
 Result:
+
 Thus, the program is verified successfully
 
-EXP NO:8 C PROGRAM TO PRINT ALL OF ITS PERMUTATIONS IN STRICT LEXICOGRAPHICAL ORDER.
+
+## EXP NO:8 C PROGRAM TO PRINT ALL OF ITS PERMUTATIONS IN STRICT LEXICOGRAPHICAL ORDER.
 Aim:
 To write a C program to print all of its permutations in strict lexicographical order.
 
@@ -84,7 +152,45 @@ Free the memory allocated for each string in s Free the memory allocated for s
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+#include <string.h>
+int main() {
+    int n;
+    scanf("%d", &n);
+    char a[20][20];
+    for (int i = 0; i < n; i++)
+        scanf("%s", a[i]);
+    while (1) {
+        for (int i = 0; i < n; i++) {
+            printf("%s", a[i]);
+            if (i < n - 1) printf(" ");
+        }
+        printf("\n");
+        int i = n - 2;
+        while (i >= 0 && strcmp(a[i], a[i+1]) >= 0) i--;
+        if (i < 0) break; 
+        int j = n - 1;
+        while (strcmp(a[i], a[j]) >= 0) j--;
+        char temp[20];
+        strcpy(temp, a[i]);
+        strcpy(a[i], a[j]);
+        strcpy(a[j], temp);
+        int start = i + 1, end = n - 1;
+        while (start < end) {
+            strcpy(temp, a[start]);
+            strcpy(a[start], a[end]);
+            strcpy(a[end], temp);
+            start++;
+            end--;
+        }
+    }
+    return 0;
+}
+
+
+
+```
 
 
 
@@ -92,7 +198,8 @@ Program:
 Output:
 
 
-//paste your output here
+<img width="912" height="390" alt="image" src="https://github.com/user-attachments/assets/c0ed1a4d-5b36-4dba-9916-bd492a245650" />
+
 
 
 
@@ -100,10 +207,11 @@ Output:
 
 
 Result:
+
 Thus, the program is verified successfully
  
-EXP NO:9 C PROGRAM PRINT A PATTERN OF NUMBERS FROM 1 TO N AS
-SHOWN BELOW.
+
+## EXP NO:9 C PROGRAM PRINT A PATTERN OF NUMBERS FROM 1 TO N AS SHOWN BELOW.
 Aim:
 To write a C program to print a pattern of numbers from 1 to n as shown below.
 Algorithm:
@@ -117,15 +225,43 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
 
+int main() {
+    int n;
+    scanf("%d", &n);
+    
+    int size = 2 * n - 1; 
+    
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            int top = i;
+            int left = j;
+            int right = size - 1 - j;
+            int bottom = size - 1 - i;
+            
+            int min = top;
+            if (left < min) min = left;
+            if (right < min) min = right;
+            if (bottom < min) min = bottom;
+            
+            printf("%d ", n - min);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
+```
 
 
 
 Output:
 
 
-//paste your output here
+<img width="800" height="705" alt="image" src="https://github.com/user-attachments/assets/2e4f9a48-67ef-49fe-a815-daeb5c0357f5" />
+
 
 
 
@@ -133,9 +269,11 @@ Output:
 
 
 Result:
+
 Thus, the program is verified successfully
 
-EXP NO:10 C PROGRAM TO FIND A SQUARE  OF NUMBER USING FUNCTION WITHOUT ARGUMENTS WITH RETURN TYPE
+
+## EXP NO:10 C PROGRAM TO FIND A SQUARE  OF NUMBER USING FUNCTION WITHOUT ARGUMENTS WITH RETURN TYPE
 
 Aim:
 
@@ -156,22 +294,30 @@ o	Call the square() function and display the result.
 
 Program:
 
-//type your code here
-
-
-
+```
+#include <stdio.h>
+void square();
+int main(){
+    
+    square();
+    return 0;
+}
+void square(){
+    int a;
+    scanf("%d",&a);
+    float ans = a*a;
+    printf("The square of %d is : %.2f",a,ans);
+}
+```
 
 Output:
 
 
-//paste your output here
-
-
-
-
+<img width="533" height="206" alt="image" src="https://github.com/user-attachments/assets/6fe0d74b-96b2-4117-bb1c-aad3630edac4" />
 
 
 Result:
+
 Thus, the program is verified successfully
 
 
